@@ -1,0 +1,13 @@
+{
+  "navebar": {
+    "home": "الرئيسية",
+    "categories": "الفئات",
+    "products": "المنتجات",
+    "checkout": "الدفع",
+    "brands": "الماركات",
+    "signout": "تسجيل الخروج",
+    "login": "تسجيل الدخول",
+    "lang": "اللغة",
+    "register": "التسجيل"
+  }
+}
