@@ -1,0 +1,89 @@
+<section id="static-fixed">
+
+  <h1 class="text-3xl">static slider</h1>
+  <div class="grid md:grid-cols-[70%_30%] pb-4">
+
+    <div>
+      <owl-carousel-o [options]="mainslider">
+        <ng-template carouselSlide>
+          <img src="/images/blog-img-1.jpeg" alt="picture" class="w-100 h-[300px]">
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="/images/blog-img-2.jpeg" alt="picture" class="w-100 h-[300px]">
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+    <div>
+      <img src="/images/grocery-banner-2.jpeg" alt="" class="w-100 h-[150px]">
+      <img src="/images/grocery-banner.png" alt="" class="w-100 h-[150px]">
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+  <h2 class="text-3xl">Dynamic slider</h2>
+  <owl-carousel-o [options]="customOptions">
+    @for (item of categorie; track item._id) {
+    <ng-template carouselSlide>
+      <div>
+        <img [src]="item.image" [alt]="item.name" class="w-full h-[250px]">
+        <h2 class="text-green-500">{{item.name}}</h2>
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
+</section>
+
+<section>
+  <h3 class="text-3xl">Products</h3>
+  <div class="card grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    <!-- card -->
+    @for (proad of product.slice(0,12) ; track proad._id) {
+    <div class="card border border-green-400/50 rounded-md overflow-hidden shadow relative">
+
+      @if(array.includes(proad._id)){
+
+      <a (click)="deleteproductfromwishlist(proad._id)" class="heart absolute top-10">
+        <i class="fa-solid fa-heart"></i>
+      </a>
+
+      }
+
+      @else{
+      <a (click)="AddProducttowishlist(proad._id)" class="heart absolute top-10 text-2xl">
+        <i class="fa-regular fa-heart"></i>
+      </a>
+      }
+
+
+      <div [routerLink]="['/details', proad._id ]">
+        <div class="card-img">
+          <img [src]="proad.imageCover" class="w-full h-[250px] object-contain" alt="proad.title" />
+        </div>
+        <div class="card-body px-2 py-4">
+          <h4 class="text-green-500 text-xs">{{proad.category.name}}</h4>
+          <h3 class="font-medium">{{proad.title.split(" ",2).join(" ")}}</h3>
+          <div class="flex justify-between items-center">
+            <span>{{proad.price}}EGP</span>
+            <div class="flex items-center">
+              <i class="fas fa-star text-yellow-300"></i>
+              <span class="text-gray-500">{{proad.ratingsAverage}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button (click)="AddProduct(proad._id)"
+        class="bg-green-500 text-white py-2 w-[90%] block m-auto border rounded px-10 mb-2">
+        Add to cart
+      </button>
+
+    </div>
+
+    }
+
+  </div>
+</section>

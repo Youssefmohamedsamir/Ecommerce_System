@@ -1,0 +1,18 @@
+<section class="pt-16">
+  <h1 class="text-green-500 text-center capitalize text-4xl">categorie product</h1>
+  <div class="parent-details">
+
+    <div class="parent-img">
+      <img [src]="specificCategories.image" [alt]="specificCategories.name">
+    </div>
+
+    <div class="px-4">
+      <h2 class="text-2xl">{{specificCategories.name}}</h2>
+      <h3 class="text-2xl py-2">{{specificCategories.createdAt}}</h3>
+      <div class="flex justify-between items-center">
+        <span class="py-2 text-2xl">{{specificCategories.slug}}</span>
+
+      </div>
+    </div>
+  </div>
+</section>

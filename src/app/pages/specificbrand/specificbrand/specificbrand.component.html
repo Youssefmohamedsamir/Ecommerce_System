@@ -1,0 +1,21 @@
+@if(specificBrand)
+{
+<section class="pt-16">
+  <h1 class="text-green-500 text-center capitalize text-4xl">brand Product</h1>
+  <div class="parent-details">
+
+    <div class="parent-img">
+      <img [src]="specificBrand.image" [alt]="specificBrand.name">
+    </div>
+
+    <div class="px-4">
+      <h2 class="text-2xl">{{specificBrand.name}}</h2>
+      <h3 class="text-2xl py-2">{{specificBrand.createdAt}}</h3>
+      <div class="flex justify-between items-center">
+        <span class="py-2 text-2xl">{{specificBrand.slug}}</span>
+
+      </div>
+    </div>
+  </div>
+</section>
+}

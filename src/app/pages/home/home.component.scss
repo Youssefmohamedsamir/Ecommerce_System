@@ -1,0 +1,32 @@
+.card {
+  button {
+    transform: translateY(100%);
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  &:hover {
+    button {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
+
+#static-fixed {
+  padding-top: 3em;
+}
+
+.heart {
+  right: 1em;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.card:hover {
+  a {
+
+    opacity: 1;
+    transition-duration: 0.5s;
+  }
+}
